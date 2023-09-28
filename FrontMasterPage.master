@@ -1,0 +1,265 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="FrontMasterPage.master.cs" Inherits="FrontMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head runat="server">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EduLearn Hub - Multi-Purpose LMS &amp; Education Template</title>
+    <meta name="description" content="Edu Description">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="http://localhost:64318/front-assets/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://localhost:64318/front-assets/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://localhost:64318/front-assets/assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="http://localhost:64318/front-assets/assets/css/slick.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="http://localhost:64318/front-assets/css/style.css">
+    <link rel="stylesheet" href="http://localhost:64318/front-assets/css/scheme/orange.css">
+    <link rel="stylesheet" href="http://localhost:64318/front-assets/css/responsive.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600%7CRoboto+Slab:400,700" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="http://localhost:64318/front-assets/images/favicon.png">
+    <link rel="apple-touch-icon" href="http://localhost:64318/front-assets/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="http://localhost:64318/front-assets/images/icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="http://localhost:64318/front-assets/images/icon-114x114.png">
+   
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+
+    <!-- Topbar -->
+    <header class="elh-topbar">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-xs-4">
+                    <div class="top-block">
+                        <p class="top-phone"><i class="fa fa-phone"></i>+1-0000-000-000</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xs-8 text-right">
+                    <div class="top-block top-socials">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-google-plus"></i></a>
+                        <a href="#"><i class="fa fa-youtube-play"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa fa-vimeo"></i></a>
+                    </div>
+                    <div class="top-block language-block">
+                       <%-- <div class="language-wrap">
+                            <p id="languageToggle" class="language-selected">EN <i class="fa fa-angle-down"></i></p>
+                            <ul id="language-select" class="language-select">
+                                <li class="current"><a href="#">EN</a></li>
+                                <li><a href="#">Fr</a></li>
+                                <li><a href="#">It</a></li>
+                            </ul>
+                        </div>--%>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Topbar End -->
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="home_education_1.html"><img src="http://localhost:64318/front-assets/images/logo-2.jpeg" alt="Site Logo"></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                     <li><a href="index.aspx">Home</a></li>
+                      <li class="dropdown">
+                        <a href="#">About Us</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="ourTeam.aspx">Our Team</a></li>   
+                            <li><a href="aboutus.aspx">Mission & Vision</a></li>                                 
+                             <li><a href="principalMessage.aspx">Principal Message</a></li>                            
+                             <li><a href="directorMessage.aspx">Director Message</a></li>                            
+                             <li><a href="chairmanMessage.aspx">Chairman Message</a></li>                                    
+                        </ul>
+                    </li>
+                    <li><a href="coursePage.aspx">Course</a></li>
+                    <li class="dropdown">
+                        <a href="#">Activities</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="blogpage.aspx">Blog</a></li>
+                            <li><a href="latestNews.aspx">News and Events</a></li>
+                            <li><a href="gallery.aspx">Gallery</a></li>
+                            <li><a href="videos.aspx">College Videos</a></li>
+                        </ul>
+                    </li>
+
+                    
+                    <li class="dropdown">
+                        <a href="blog-1.html">Admission</a>
+                        <ul class="dropdown-menu">
+                                                        <asp:Repeater ID="pdfRepeater" runat="server">
+                                <ItemTemplate>
+                            <li><a href='<%#Eval("pdf_file")%>' target="_blank"><%#Eval("title")%></a></li>
+                            
+                            </ItemTemplate>
+                                                            </asp:Repeater>
+                        </ul>
+                    </li>
+                     <li class="dropdown">
+                        <a href="#">Student Corner</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="studentList.aspx">Student List</a></li>
+                            <li><a href="testimonials.aspx">View Testimonials</a></li>
+                            <li><a href="feedBackPage.aspx">Post FeedBack</a></li>
+                            <li><a href="topperList.aspx">Our Toppers</a></li>
+                            <li><a href="studyMaterials.aspx?type='Result'">Result</a></li>
+                            <li><a href="studyMaterials.aspx?type='Study Material'">Study Material</a></li>
+                        </ul>
+                    </li>
+                    <%--<li><a href="testimonials.aspx">Testimonials</a></li>--%>
+                    <%--<li><a href="fas.aspx">FAQs</a></li>--%>
+                    <li><a href="contactUs.aspx">Contact</a></li>
+                    <li><a href="applyCourse.aspx" class="btn" style="padding: 10px 18px;margin-top:20px">Apply Course</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navigation End -->
+          
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    
+                </asp:ContentPlaceHolder>
+        <!-- Subscribe us -->
+        <div class="elh-section elh-theme-bg elh-subscribe-section style-2" style="padding:20px">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="elh-subscribe-heading">
+                            <h3>Subscribe us for Future Updates</h3>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div id="subscription" class="elh-subscribe-form pull-right xs-pull-center">
+                            <input type="email" name="email" placeholder="Enter your mail here">
+                            <button type="submit" style="margin-top: 10px;margin-right: 15px;"><i class="fa fa-paper-plane"></i></button>
+                            <p class="newsletter-success"></p>
+                            <p class="newsletter-error"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Subscribe us end -->
+           <footer>
+        <div class="elh-footer-widget-area" style="padding:30px">
+            <div class="container">
+                <div class="row">
+                    <div class="elh-footer-widgets">
+                        <div class="col-md-6 col-xs-6">
+                            <aside class="widget about_widget">
+                                <a class="footer-logo" href="#">
+                                    <img src="" alt="Site Logo">
+                                </a>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                                <div class="socials">
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                                    <a href="#"><i class="fa fa-youtube"></i></a>
+                                </div>
+                            </aside>
+                        </div>
+                        <div class="col-md-2 col-xs-6">
+                            <div class="widget widget_custom-menu">
+                                <h3 class="widget-title">About Us</h3>
+                                <ul class="custom-menu">
+                                    <li><a href="index.aspx">Home</a></li>
+                                     <li><a href="aboutus.aspx">Mission & Vision</a></li>                                 
+                             <li><a href="principalMessage.aspx">Principal Message</a></li>                            
+                             <li><a href="directorMessage.aspx">Director Message</a></li>                            
+                             <li><a href="chairmanMessage.aspx">Chairman Message</a></li>        
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-xs-6">
+                            <div class="widget widget_custom-menu">
+                                <h3 class="widget-title">Useful Links</h3>
+                                <ul class="custom-menu">
+                                    <li><a href="coursePage.aspx">Course</a></li>
+                                   <li><a href="blogpage.aspx">Blog</a></li>
+                            <li><a href="latestNews.aspx">News and Events</a></li>
+                            <li><a href="gallery.aspx">Gallery</a></li>
+                            <li><a href="videos.aspx">College Videos</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-xs-6">
+                            <div class="widget widget_custom-menu">
+                                <h3 class="widget-title">Useful Links</h3>
+                                <ul class="custom-menu">
+                                     <li><a href="faq.aspx">Faq</a></li>
+                                       <li><a href="testimonials.aspx">View Testimonials</a></li>
+                                    <li><a href="feedBackPage.aspx">Post FeedBack</a></li>
+                            <li><a href="topperList.aspx">Our Toppers</a></li>
+                                    <li><a href="contactUs.aspx">Contact</a></li>
+                                    <li><a href="applyCourse.aspx">Apply Course</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="elh-footer-lower-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-xs-12">
+                        <p class="copyright xs-text-center">Copyright 2023, <a href="#">Grow Ambition Medical institue</a>. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-sm-6 col-xs-12 text-right xs-text-center">
+                        <ul class="footer-menu">
+                            <li><a href="termsAndCondition.aspx">Terms &amp; Conditions</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+       
+         <script src="http://localhost:64318/front-assets/assets/js/jquery.min.js"></script>
+        <script src="http://localhost:64318/front-assets/assets/js/bootstrap.min.js"></script>
+        <script src="http://localhost:64318/front-assets/assets/js/imagesloaded.pkgd.min.js"></script>
+        <script src="http://localhost:64318/front-assets/assets/js/visible.js"></script>
+        <script src="http://localhost:64318/front-assets/assets/js/isotope.pkgd.min.js"></script>
+        <script src="http://localhost:64318/front-assets/assets/js/owl.carousel.min.js"></script>
+        <script src="http://localhost:64318/front-assets/assets/js/slick.min.js"></script>
+        <script src="http://localhost:64318/front-assets/assets/js/plyr.js"></script>
+        <script src="http://localhost:64318/front-assets/assets/js/jquery.countTo.js"></script>
+        <script src="http://localhost:64318/front-assets/assets/js/jquery.countdown.min.js"></script>
+        <script src="http://localhost:64318/front-assets/assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="http://localhost:64318/front-assets/assets/js/jquery.ajaxchimp.min.js"></script>
+        <script src="http://localhost:64318/front-assets/js/custom.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmiJjq5DIg_K9fv6RE72OY__p9jz0YTMI"></script>
+        <script src="http://localhost:64318/front-assets/js/map.js"></script>
+
+    </form>
+
+</body>
+</html>
